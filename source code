@@ -1,0 +1,90 @@
+package com.mycompany.tugasperulangantunggal;
+import java.util.Scanner;
+public class TUGASPERULANGANTUNGGAL {
+  
+    
+    //FAHIS DWI PRASETYA(24082010111)
+    public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+        int pilih=0,jumlah, kartumember ;
+        double total = 0, GrandTotal = 0, diskon;
+        do{
+            System.out.println("\nKasir Sederhana");
+            System.out.println("1. Tas\n2. Sandal\n3. Sepatu");
+            System.out.println("4. Selesai");
+            System.out.println("===============================================");
+            System.out.print("Pilih item     : ");
+            pilih=sc.nextInt();
+            System.out.println("===============================================");
+            
+            switch(pilih){
+                case 1:
+                    System.out.println("Tas [Rp. 100.000]");
+                    System.out.print("Jumlah item    : ");
+                    jumlah= sc.nextInt();
+                    total= 100000*jumlah;
+                    System.out.println("Total          : Rp."+total);
+                    System.out.println("===============================================");
+                    GrandTotal=total+GrandTotal;
+                    System.out.println("GrandTotal     : Rp."+GrandTotal);
+                    System.out.println("-----------------------------------------------");
+                    break;
+                case 2:
+                    System.out.println("Sandal [Rp. 50.000]");
+                    System.out.print("Jumlah item    : ");
+                    jumlah= sc.nextInt();
+                    total= 50000*jumlah;
+                    System.out.println("Total          : Rp."+total);
+                    System.out.println("===============================================");
+                    GrandTotal=total+GrandTotal;
+                    System.out.println("GrandTotal     : Rp."+GrandTotal);
+                    System.out.println("-----------------------------------------------");
+                    break;
+                case 3:
+                    System.out.println("Sepatu [Rp. 300.000]");
+                    System.out.print("Jumlah item    : ");
+                    jumlah= sc.nextInt();
+                    total= 300000*jumlah;
+                    System.out.println("Total          : Rp."+total);
+                    System.out.println("===============================================");
+                    GrandTotal=total+GrandTotal;
+                    System.out.println("GrandTotal     : Rp."+GrandTotal);
+                    System.out.println("-----------------------------------------------");
+                    break;
+                case 4:
+                    System.out.println("TOTAL AKHIR    : Rp."+GrandTotal);
+                    System.out.println("-----------------------------------------------");
+                    
+                    break;
+                default: System.out.println();
+            }
+        }while (pilih!=4);
+        System.out.println();
+        
+        System.out.println("Apakah Anda Mempunyai Kartu Member?");
+        System.out.println("Ketik 1 jika mempunyai, ketik 2 jika tidak");
+        System.out.print("Pilih   : ");
+        kartumember = sc.nextInt();
+        
+        System.out.println();
+        System.out.println("===============================================");
+        System.out.println();
+        
+        if (kartumember == 1){
+            System.out.println("Selamat, Anda Mendapatkan Diskon Sebesar 5%");
+            diskon = 0.05 * GrandTotal;
+            System.out.println("Diskon                : Rp." + diskon);
+            total = GrandTotal - diskon;
+            System.out.println("TOTAL YANG DIBAYARKAN : Rp." + total);
+        } else if (kartumember == 2){
+            System.out.println("MOhon Maaf, Anda belum Mendapatkan Diskon");
+            diskon = 0 * GrandTotal;
+            System.out.println("Diskon                : Rp." + diskon);
+            System.out.println("TOTAL YANG DIBAYARKAN : Rp." + total);
+        } else {
+            System.out.println("Jawaban Anda Tidak Valid");
+          }
+        System.out.println();
+        System.out.println("=================terima kasih=================");
+    }
+}
